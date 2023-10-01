@@ -7,7 +7,7 @@ import requests
 def home(req):
     # teams = Teams.objects.all()
     # idCount = 0
-    teamAbbrs = ["ATL", "BOS", "BRK", "CHO", "CHI", "CLE", "DAL", "DEN", "DET", "GSW", "HOU", "IND", "LAC", "LAL", "MEM", "MIA", "MIL", "MIN", "NOH", "NYK", "OKC", "ORL", "PHI", "PHO", "POR", "SAC", "SAS", "TOR", "UTA", "WAS"]
+    teamAbbrs = ["ATL", "BOS", "BRK", "CHO", "CHI", "CLE", "DAL", "DEN", "DET", "GSW", "HOU", "IND", "LAC", "LAL", "MEM", "MIA", "MIL", "MIN", "NOP", "NYK", "OKC", "ORL", "PHI", "PHO", "POR", "SAC", "SAS", "TOR", "UTA", "WAS"]
     # for team in teams:
         # teamObject = Teams(id=idCount, abbr=team)
         # teamObject.save()
@@ -22,10 +22,7 @@ def home(req):
         player_cards = soup.find_all('td', attrs={"data-stat": "player"})
         playerList = []
         for player in player_cards:
-            print(player)
             playerList.append(player.find('a').text)
-        # print(playerList)
         teamObj["players"] = playerList
-        # print(teamObj)
         teams.append(teamObj)
     return render(req, "teams.html", {"teams":teams})
