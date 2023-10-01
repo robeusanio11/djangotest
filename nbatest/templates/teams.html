@@ -1,11 +1,11 @@
-{% extends "base.html" %}
-{% block content %}
-<ul>
+{% extends "base.html" %} {% block content %}
     {% for team in teams %}
-    <li>{{team}}</li>
+        <h3>{{team.name}}</h3>
+        <ul>
+        {% for player in team.players %}
+            <li>{{player}}</li>
+        {% endfor %}
+        </ul>
     {% endfor %}
-</ul>
 
-
-<table> </table>
 {% endblock %}
