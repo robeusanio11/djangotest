@@ -1,4 +1,11 @@
-{% extends "base.html" %} {% block title %} Denver Nuggets {% endblock %}
+{% extends "base.html" %}
 {% block content %}
-<p>Hello World!!!!!!!!!!!!</p>
+<ul>
+    {% for team in teams %}
+    <li>{{team}}</li>
+    {% endfor %}
+</ul>
+
+
+<table> </table>
 {% endblock %}
